@@ -41,7 +41,7 @@ function App() {
           onClick={async () => {
             H.track("calling backend", { count });
             try {
-              const r = await fetch("http://localhost:5001/json");
+              const r = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL ?? 'http://localhost:5001'}/json`);
               setResponse(await r.json());
             } catch (e) {
               setError(e as unknown as Error);
