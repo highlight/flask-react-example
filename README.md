@@ -16,4 +16,4 @@ A sample app with a Python Flask backend and a React.js frontend that sets up hi
 ### Backend
 1. `cd backend`
 2. `poetry install`
-3. `poetry run flask --app main run -h 0.0.0.0 --port 5001`
+3. `poetry run flask --app src.main run -h 0.0.0.0 --port 5001`
