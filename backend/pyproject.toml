@@ -13,6 +13,9 @@ highlight-io = {extras = ["flask"], version = "^0.6.0"}
 flask-cors = "^4.0.0"
 
 
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

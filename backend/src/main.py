@@ -13,23 +13,26 @@ CORS(app)
 # `instrument_logging=True` sets up logging instrumentation.
 # if you do not want to send logs or are using `loguru`, pass `instrument_logging=False`
 H = highlight_io.H(
-	"lgxy4pdm",
-	integrations=[FlaskIntegration()],
-	instrument_logging=True,
-	service_name="my-flask-app",
-	service_version="git-sha",
+    "lgxy4pdm",
+    integrations=[FlaskIntegration()],
+    instrument_logging=True,
+    service_name="my-flask-app",
+    service_version="git-sha",
 )
+
 
 @app.route("/")
 def hello_world():
-    logging.info('hello, world!')
+    logging.info("hello, world!")
     return "<p>Hello, World!</p>"
+
 
 @app.route("/json")
 def json():
-    value = 7. / random.randint(0, 10)
-    logging.info('returning json!', {'random': value})
-    return jsonify({'hello': 'world!', 'value': value})
+    value = 7.0 / random.randint(0, 10)
+    logging.info("returning json!", {"random": value})
+    return jsonify({"hello": "world!", "value": value})
+
 
 @app.route("/error")
 def error():
