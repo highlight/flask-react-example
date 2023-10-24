@@ -1,6 +1,7 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useState, useEffect } from "react";
+import reactLogo from "/react.svg";
+import highlightLogo from "/highlight.svg";
+import flaskLogo from "/flask.svg";
 import { H } from "highlight.run";
 import "./App.css";
 
@@ -9,30 +10,50 @@ function App() {
   const [response, setResponse] = useState();
   const [error, setError] = useState<Error>();
 
+  useEffect(() => {
+      const interval = setInterval(async () => {
+          try {
+              await fetch(`${import.meta.env.VITE_APP_BACKEND_URL ?? 'http://localhost:5001'}/error`)
+          } catch(e) { console.error(e) }
+      }, 1000)
+      return () => {
+          return clearInterval(interval)
+      }
+  }, [])
+
   if (error) {
     throw error;
   }
 
-  return (
+    return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+        <a href="https://highlight.io" target="_blank">
+          <img src={highlightLogo} className="logo" alt="Highlight logo" />
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
+        <a href="https://flask.palletsprojects.com/en/3.0.x" target="_blank">
+          <img src={flaskLogo} className="logo" alt="Python Flask logo" />
+        </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>highlight.io with React -{">"} Python Flask</h1>
       <div className="card">
         <button
-          onClick={() => {
+          onClick={async () => {
             setCount((count) => count + 1);
             H.identify("jay@highlight.io", {
               id: "very-secure-id",
               phone: "867-5309",
               bestFriend: "jenny",
             });
+            try {
+              const r = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL ?? 'http://localhost:5001'}/`);
+              await r.text();
+            } catch (e) {
+              setError(e as unknown as Error);
+            }
           }}
         >
           count is {count}
@@ -50,13 +71,10 @@ function App() {
         >
           Send Backend Request
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-        {response && <div>{JSON.stringify(response)}</div>}
+        {response && <div className="response">{JSON.stringify(response)}</div>}
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        Click the logo to learn more.
       </p>
     </>
   );

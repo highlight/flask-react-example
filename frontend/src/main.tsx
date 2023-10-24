@@ -5,7 +5,7 @@ import "./index.css";
 import { ErrorBoundary } from "@highlight-run/react";
 import { H } from "highlight.run";
 
-H.init("lgxy4pdm", {
+H.init("4d7k1xeo", {
   serviceName: "frontend-app",
   tracingOrigins: true,
   networkRecording: {
