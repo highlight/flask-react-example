@@ -9,7 +9,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 Flask = "^2.3.3"
-highlight-io = {extras = ["flask"], version = "^0.6.0"}
+highlight-io = {extras = ["flask"], version = "^0.6.13"}
 flask-cors = "^4.0.0"
 
 
