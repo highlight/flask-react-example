@@ -5,7 +5,7 @@ import "./index.css";
 import {ErrorBoundary} from "@highlight-run/react";
 import {H} from "highlight.run";
 
-H.init("4d7k1xeo", {
+H.init("lgxy4pdm", {
     serviceName: "frontend-app",
     tracingOrigins: [
         'python-flask-backend.onrender.com',
