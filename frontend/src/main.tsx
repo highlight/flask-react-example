@@ -12,6 +12,7 @@ H.init("lgxy4pdm", {
         'localhost',
         'localhost:5001',
     ],
+    privacySetting: 'none',
     networkRecording: {
         enabled: true,
         recordHeadersAndBody: true,
