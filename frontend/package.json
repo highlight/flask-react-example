@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@highlight-run/react": "^3.2.1",
-    "highlight.run": "^8.4.0",
+    "@highlight-run/react": "^8.1.0",
+    "highlight.run": "^9.7.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
