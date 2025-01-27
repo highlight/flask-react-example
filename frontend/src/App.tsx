@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
       const interval = setInterval(async () => {
           try {
-              await fetch(`${import.meta.env.VITE_APP_BACKEND_URL ?? 'http://localhost:5001'}/error`)
+              await fetch(`${import.meta.env.VITE_APP_BACKEND_URL ?? 'http://localhost:5555'}/error`)
           } catch(e) { console.error(e) }
       }, 1000)
       return () => {
@@ -49,7 +49,7 @@ function App() {
               bestFriend: "jenny",
             });
             try {
-              const r = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL ?? 'http://localhost:5001'}/`);
+              const r = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL ?? 'http://localhost:5555'}/`);
               await r.text();
             } catch (e) {
               setError(e as unknown as Error);
@@ -62,7 +62,7 @@ function App() {
           onClick={async () => {
             H.track("calling backend", { count });
             try {
-              const r = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL ?? 'http://localhost:5001'}/json`);
+              const r = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL ?? 'http://localhost:5555'}/json`);
               setResponse(await r.json());
             } catch (e) {
               setError(e as unknown as Error);

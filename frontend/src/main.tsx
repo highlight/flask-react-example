@@ -10,7 +10,7 @@ H.init("lgxy4pdm", {
     tracingOrigins: [
         'python-flask-backend.onrender.com',
         'localhost',
-        'localhost:5001',
+        'localhost:5555',
     ],
     privacySetting: 'none',
     networkRecording: {
